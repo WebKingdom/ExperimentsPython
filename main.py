@@ -10,10 +10,10 @@ numRange = [0, 10]
 
 number = random.randint(numRange[0], numRange[1])
 
-print("Guess the number between " + str(numRange[0]) + "and" + str(numRange[1]) + name + "! ")
+print("Guess the number between " + str(numRange[0]) + " and " + str(numRange[1]) + " " + name + "! ")
 
 while numGuesses < TOTAL_GUESSES:
-    curGuess = int(input('Take guess:'))
+    curGuess = int(input('Take guess: '))
 
     numGuesses += 1
 
@@ -21,3 +21,10 @@ while numGuesses < TOTAL_GUESSES:
         print('That is correct!')
         break
 
+    if curGuess < number:
+        print('Number is higher.')
+
+    if curGuess > number:
+        print('Number is lower.')
+
+print('Done!')
