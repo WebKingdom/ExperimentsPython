@@ -2,29 +2,34 @@ import random
 
 TOTAL_GUESSES = 10
 
-numGuesses = 0
 
-name = input("Hi, What is your name? ")
+def launch_number_guessing():
+    num_guesses = 0
 
-numRange = [0, 10]
+    name = input("Hi, What is your name? ")
 
-number = random.randint(numRange[0], numRange[1])
+    num_range = [0, 10]
 
-print("Guess the number between " + str(numRange[0]) + " and " + str(numRange[1]) + " " + name + "! ")
+    number = random.randint(num_range[0], num_range[1])
 
-while numGuesses < TOTAL_GUESSES:
-    curGuess = int(input('Take guess: '))
+    print("Guess the number between " + str(num_range[0]) + " and " + str(num_range[1]) + " " + name + "! ")
 
-    numGuesses += 1
+    while num_guesses < TOTAL_GUESSES:
+        cur_guess = int(input('Take guess: '))
 
-    if curGuess == number:
-        print('That is correct!')
-        break
+        num_guesses += 1
 
-    if curGuess < number:
-        print('Number is higher.')
+        if cur_guess == number:
+            print('That is correct!')
+            break
 
-    if curGuess > number:
-        print('Number is lower.')
+        if cur_guess < number:
+            print('Number is higher.')
 
-print('Done!')
+        if cur_guess > number:
+            print('Number is lower.')
+
+    print('Done!')
+
+
+launch_number_guessing()
