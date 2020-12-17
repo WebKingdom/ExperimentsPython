@@ -15,9 +15,12 @@ def launch_number_guessing():
     print("Guess the number between " + str(num_range[0]) + " and " + str(num_range[1]) + " " + name + "! ")
 
     while num_guesses < TOTAL_GUESSES:
-        cur_guess = int(input('Take guess: '))
-
-        num_guesses += 1
+        try:
+            cur_guess = int(input('Take guess: '))
+            num_guesses += 1
+        except ValueError:
+            print('Invalid number! Try again')
+            continue
 
         if cur_guess == number:
             print('That is correct!')
